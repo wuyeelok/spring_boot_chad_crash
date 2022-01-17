@@ -9,7 +9,7 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.luv2code.springboot.demo</groupId>
-	<artifactId>mycoolapp</artifactId>
+	<artifactId>02-dev-tools-demo</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>spring_boot_chad_crash</name>
 	<description>Demo project for Spring Boot Can be delete</description>
