@@ -1,13 +1,13 @@
-package com.luv2code.springboot.demo;
+package com.luv2code.springboot.cruddemo;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class SpringBootChadCrashApplication {
+public class CruddemoApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(SpringBootChadCrashApplication.class, args);
+		SpringApplication.run(CruddemoApplication.class, args);
 	}
 
 }
