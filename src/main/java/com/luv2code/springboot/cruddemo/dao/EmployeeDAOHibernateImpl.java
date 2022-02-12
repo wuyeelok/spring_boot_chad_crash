@@ -32,13 +32,37 @@ public class EmployeeDAOHibernateImpl implements EmployeeDAO {
         Session currentSession = this.entityManager.unwrap(Session.class);
 
         // Create a query
-        Query<Employee> theQuery = currentSession.createQuery("from Employee", Employee.class);
+        Query<Employee> theQuery = currentSession.createQuery("from Employee order by id", Employee.class);
 
         // Excecute query and get result list
         List<Employee> employees = theQuery.getResultList();
 
         // return the results
         return employees;
+    }
+
+    @Override
+    @Transactional
+    public Employee findById(int id) {
+
+        Employee employee = null;
+
+        // Get the current hibernate session
+        Session currentSession = this.entityManager.unwrap(Session.class);
+
+        // Create a query
+        Query<Employee> theQuery = currentSession.createQuery("from Employee where id = :id", Employee.class);
+        theQuery.setParameter("id", id);
+
+        // Excecute query and get result list
+        List<Employee> employees = theQuery.getResultList();
+
+        if (employees.size() == 1) {
+            employee = employees.get(0);
+        }
+
+        // return the results
+        return employee;
     }
 
 }
